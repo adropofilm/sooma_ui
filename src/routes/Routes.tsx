@@ -5,8 +5,9 @@ import Home from "@/components/Home";
 import Quizzes from "@/components/Quizzes";
 import Login from "@/components/Login";
 import Register from "@/components/Register";
+import { ReactElement } from "react";
 
-const Root = () => {
+const Root = (): ReactElement => {
   return (
     <>
       <AppContainer />
