@@ -1,2 +1,2 @@
-import { Routes } from "@/routes/Routes";
+import { Routes } from "./Routes";
 export default Routes;
