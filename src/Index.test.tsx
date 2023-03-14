@@ -17,7 +17,7 @@ describe("App", () => {
     jest.resetModules();
   });
 
-  const testProvider = [
+  const testData = [
     {
       startingPage: "home",
       initialEntry: "/",
@@ -31,7 +31,7 @@ describe("App", () => {
       secondaryEntry: "/",
     },
   ];
-  describe.each(testProvider)(
+  describe.each(testData)(
     "$startingPage page",
     ({ startingPage, initialEntry, secondaryEntry, secondaryPage }) => {
       const router = createMemoryRouter(Routes, {
