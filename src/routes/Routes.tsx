@@ -1,7 +1,4 @@
-import { ReactElement } from "react";
-import { Outlet } from "react-router-dom";
 import React from "react";
-import AppContainer from "../components/Layout";
 import { PATHS } from "../utils/constants";
 import { Home } from "../components/Pages/Home";
 import { Quizzes } from "../components/Pages/Quizzes";
