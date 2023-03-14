@@ -1,2 +1,2 @@
 import { Quizzes } from "./Quizzes";
-export default Quizzes;
+export { Quizzes };
