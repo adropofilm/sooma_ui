@@ -16,5 +16,5 @@
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true
   },
-  "include": ["src", "utils", "jest.setup.ts"]
+  "include": ["src", "utils", "jest.setup.ts", "custom.d.ts", "types"]
 }
