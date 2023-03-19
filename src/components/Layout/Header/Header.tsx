@@ -5,6 +5,7 @@ import { PATHS } from "../../../utils/constants";
 import logo from "../../../assets/logo.png";
 import NavItem from "./NavItem";
 import Button from "../../common/Button";
+import BurgerMenu from "../../common/BurgerMenu";
 
 export const Header = (): ReactElement => {
   const homePage = useMatch(PATHS.HOME);
@@ -34,6 +35,7 @@ export const Header = (): ReactElement => {
             label="Sign Up"
             classes="periwinkle lg:mr-10 md:mr-5"
           />
+          <BurgerMenu classes="" />
         </ul>
       </nav>
     </header>
