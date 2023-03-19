@@ -3,7 +3,8 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#1B73E8",
+        midnight: "#1B1C37",
+        periwinkle: "#7579FF",
       },
     },
   },
