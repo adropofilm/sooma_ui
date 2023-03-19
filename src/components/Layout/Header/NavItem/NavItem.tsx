@@ -8,9 +8,9 @@ type NavItemProps = {
 };
 
 export const NavItem = ({ active, label, to }: NavItemProps): ReactElement => {
-  const style = active ? "border-b-4 border-periwinkle" : "nav-deelected";
+  const style = active ? "border-b-4 border-periwinkle" : "mb-1";
   return (
-    <li className={`${style} ml-10`}>
+    <li className={`${style} flex justify-center items-center ml-10`}>
       <Link to={to} aria-label={`${label} page link`} className="capitalize">
         {label}
       </Link>

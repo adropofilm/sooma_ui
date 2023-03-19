@@ -22,7 +22,7 @@ export const Header = (): ReactElement => {
               className="xs:h-8 md:h-10"
             />
           </li>
-          <div className="hidden md:flex flex-row">
+          <div className="hidden md:flex flex-row h-full">
             <NavItem active={!!homePage} label="home" to={PATHS.HOME} />
             <NavItem
               active={!!quizzesPage}
