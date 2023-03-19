@@ -6,6 +6,9 @@ module.exports = {
         midnight: "#1B1C37",
         periwinkle: "#7579FF",
       },
+      screens: {
+        xs: "320px",
+      },
     },
   },
   plugins: [],

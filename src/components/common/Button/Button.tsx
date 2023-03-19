@@ -18,7 +18,7 @@ export const Button: React.FC<Props> = ({ action, label, classes }: Props) => {
 
   return (
     <button
-      className={`bg-${classes} lg:h-10 md:h-10 lg:w-28 md:w-28 rounded-lg`}
+      className={`bg-${classes} md:h-10 md:w-28 rounded-lg`}
       onClick={handleButtonClick}
     >
       {label}

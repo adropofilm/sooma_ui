@@ -14,15 +14,15 @@ export const Header = (): ReactElement => {
   return (
     <header>
       <nav className="w-4/5 mt-10 bg-midnight rounded-lg mx-auto h-16">
-        <ul className="flex justify-between lg:pl-8 md:pl-5 text-white h-full items-center">
+        <ul className="flex justify-between xs:pl-5 lg:pl-8 text-white h-full items-center">
           <li>
             <img
               src={logo}
               alt="the word sooma with two diamonds above the a"
-              className="h-10"
+              className="xs:h-8 md:h-10"
             />
           </li>
-          <div className="flex flex-row">
+          <div className="hidden md:flex flex-row">
             <NavItem active={!!homePage} label="home" to={PATHS.HOME} />
             <NavItem
               active={!!quizzesPage}
@@ -33,9 +33,9 @@ export const Header = (): ReactElement => {
           <Button
             action="/quizzes"
             label="Sign Up"
-            classes="periwinkle lg:mr-10 md:mr-5"
+            classes="periwinkle hidden md:flex md:mr-10"
           />
-          <BurgerMenu classes="" />
+          <BurgerMenu />
         </ul>
       </nav>
     </header>
