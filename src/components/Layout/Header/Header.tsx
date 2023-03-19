@@ -5,7 +5,7 @@ import { PATHS } from "../../../utils/constants";
 import logo from "../../../assets/logo.png";
 import NavItem from "./NavItem";
 import Button from "../../common/Button";
-import BurgerMenu from "../../common/BurgerMenu";
+import BurgerMenu from "./BurgerMenu";
 
 export const Header = (): ReactElement => {
   const homePage = useMatch(PATHS.HOME);
@@ -14,12 +14,12 @@ export const Header = (): ReactElement => {
   return (
     <header>
       <nav className="w-4/5 mt-10 bg-midnight rounded-lg mx-auto h-16">
-        <ul className="flex justify-between xs:pl-5 lg:pl-8 text-white h-full items-center">
+        <ul className="flex justify-between xs:px-5 lg:px-8 text-white h-full items-center">
           <li>
             <img
               src={logo}
               alt="the word sooma with two diamonds above the a"
-              className="xs:h-8 md:h-10"
+              className=" md:h-8"
             />
           </li>
           <div className="hidden md:flex flex-row h-full">
@@ -33,7 +33,7 @@ export const Header = (): ReactElement => {
           <Button
             action="/quizzes"
             label="Sign Up"
-            classes="hidden md:flex md:mr-10 md:h-10 md:w-28 "
+            classes="hidden md:flex md:h-10 md:w-28 "
           />
           <BurgerMenu />
         </ul>
