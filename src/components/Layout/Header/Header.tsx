@@ -33,7 +33,7 @@ export const Header = (): ReactElement => {
           <Button
             action="/quizzes"
             label="Sign Up"
-            classes="periwinkle hidden md:flex md:mr-10"
+            classes="hidden md:flex md:mr-10 md:h-10 md:w-28 "
           />
           <BurgerMenu />
         </ul>

@@ -18,10 +18,10 @@ export const Button: React.FC<Props> = ({ action, label, classes }: Props) => {
 
   return (
     <button
-      className={`bg-${classes} md:h-10 md:w-28 rounded-lg`}
+      className={`${classes} rounded-lg flex items-center justify-center bg-periwinkle`}
       onClick={handleButtonClick}
     >
-      {label}
+      <span>{label}</span>
     </button>
   );
 };
