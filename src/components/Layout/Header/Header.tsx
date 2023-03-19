@@ -14,12 +14,12 @@ export const Header = (): ReactElement => {
   return (
     <header>
       <nav className="w-4/5 mt-10 bg-midnight rounded-lg mx-auto h-16">
-        <ul className="flex justify-between xs:px-5 lg:px-8 text-white h-full items-center">
+        <ul className="flex justify-between px-8 text-white h-full items-center">
           <li>
             <img
               src={logo}
               alt="the word sooma with two diamonds above the a"
-              className=" md:h-8"
+              className="w-40"
             />
           </li>
           <div className="hidden md:flex flex-row h-full">

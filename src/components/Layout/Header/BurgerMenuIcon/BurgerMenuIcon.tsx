@@ -10,7 +10,7 @@ export const BurgerMenuIcon = ({ classes, action }: Props): ReactElement => {
     <>
       <svg
         xmlns="http://www.w3.org/2000/svg"
-        className={`${classes} mr-5 w-8 h-8`}
+        className={`${classes} w-8 h-8`}
         stroke-width={3}
         stroke="currentColor"
         fill="none"
