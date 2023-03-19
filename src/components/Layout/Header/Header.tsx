@@ -23,11 +23,17 @@ export const Header = (): ReactElement => {
             />
           </li>
           <div className="hidden md:flex flex-row h-full">
-            <NavItem active={!!homePage} label="home" to={PATHS.HOME} />
+            <NavItem
+              active={!!homePage}
+              label="home"
+              to={PATHS.HOME}
+              styles="ml-8"
+            />
             <NavItem
               active={!!quizzesPage}
               label="quizzes"
               to={PATHS.QUIZZES}
+              styles="ml-8"
             />
           </div>
           <Button
