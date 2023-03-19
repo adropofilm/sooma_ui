@@ -4,10 +4,10 @@ import { redirect } from "react-router-dom";
 type Props = {
   action: string | (() => void);
   label: string;
-  color?: string; // | "";
+  classes?: string;
 };
 
-export const Button: React.FC<Props> = ({ action, label, color }: Props) => {
+export const Button: React.FC<Props> = ({ action, label, classes }: Props) => {
   const handleButtonClick = () => {
     if (typeof action === "string") {
       redirect(action);
@@ -18,7 +18,7 @@ export const Button: React.FC<Props> = ({ action, label, color }: Props) => {
 
   return (
     <button
-      className={`bg-${color} h-10 w-28 rounded-lg`}
+      className={`bg-${classes} lg:h-10 md:h-10 lg:w-28 md:w-28 rounded-lg`}
       onClick={handleButtonClick}
     >
       {label}

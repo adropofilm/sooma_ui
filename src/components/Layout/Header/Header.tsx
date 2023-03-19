@@ -4,6 +4,7 @@ import { useMatch } from "react-router-dom";
 import { PATHS } from "../../../utils/constants";
 import logo from "../../../assets/logo.png";
 import NavItem from "./NavItem";
+import Button from "../../common/Button";
 
 export const Header = (): ReactElement => {
   const homePage = useMatch(PATHS.HOME);
@@ -11,8 +12,8 @@ export const Header = (): ReactElement => {
 
   return (
     <header>
-      <nav className="h-14 w-4/5 mt-10 bg-midnight rounded-lg mx-auto">
-        <ul className="flex pl-8 text-white h-full">
+      <nav className="w-4/5 mt-10 bg-midnight rounded-lg mx-auto h-16">
+        <ul className="flex justify-between lg:pl-8 md:pl-5 text-white h-full items-center">
           <li>
             <img
               src={logo}
@@ -20,8 +21,19 @@ export const Header = (): ReactElement => {
               className="h-10"
             />
           </li>
-          <NavItem active={!!homePage} label="home" to={PATHS.HOME} />
-          <NavItem active={!!quizzesPage} label="quizzes" to={PATHS.QUIZZES} />
+          <div className="flex flex-row">
+            <NavItem active={!!homePage} label="home" to={PATHS.HOME} />
+            <NavItem
+              active={!!quizzesPage}
+              label="quizzes"
+              to={PATHS.QUIZZES}
+            />
+          </div>
+          <Button
+            action="/quizzes"
+            label="Sign Up"
+            classes="periwinkle lg:mr-10 md:mr-5"
+          />
         </ul>
       </nav>
     </header>
