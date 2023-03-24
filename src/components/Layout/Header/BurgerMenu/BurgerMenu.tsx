@@ -27,8 +27,18 @@ export const BurgerMenu = (): ReactElement => {
       >
         <XIcon />
         <div className="w-28 absolute top-9 border-t-8 border-midnight -left-14 bg-midnight rounded-b-lg">
-          <NavItem active={!!homePage} label="home" to={PATHS.HOME} />
-          <NavItem active={!!quizzesPage} label="quizzes" to={PATHS.QUIZZES} />
+          <NavItem
+            active={!!homePage}
+            label="home"
+            to={PATHS.HOME}
+            testId="sm-home-nav-item"
+          />
+          <NavItem
+            active={!!quizzesPage}
+            label="quizzes"
+            to={PATHS.QUIZZES}
+            testId="sm-quizzes-nav-item"
+          />
         </div>
       </div>
     </div>

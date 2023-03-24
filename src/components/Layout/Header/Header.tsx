@@ -28,12 +28,14 @@ export const Header = (): ReactElement => {
               label="home"
               to={PATHS.HOME}
               styles="ml-8"
+              testId="lg-home-nav-item"
             />
             <NavItem
               active={!!quizzesPage}
               label="quizzes"
               to={PATHS.QUIZZES}
               styles="ml-8"
+              testId="lg-quizzes-nav-item"
             />
           </div>
           <Button

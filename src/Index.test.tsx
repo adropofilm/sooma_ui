@@ -21,19 +21,31 @@ describe("App", () => {
     {
       startingPage: "home",
       initialEntry: "/",
-      secondaryPage: "quizzes",
-      secondaryEntry: "/quizzes",
+      secondaryPage: "lg-quizzes-nav-item",
+      testId: "lg-home-nav-item",
     },
     {
       startingPage: "quizzes",
       initialEntry: "/quizzes",
-      secondaryPage: "home",
-      secondaryEntry: "/",
+      secondaryPage: "lg-home-nav-item",
+      testId: "lg-quizzes-nav-item",
+    },
+    {
+      startingPage: "home",
+      initialEntry: "/",
+      secondaryPage: "sm-quizzes-nav-item",
+      testId: "sm-home-nav-item",
+    },
+    {
+      startingPage: "quizzes",
+      initialEntry: "/quizzes",
+      secondaryPage: "sm-home-nav-item",
+      testId: "sm-quizzes-nav-item",
     },
   ];
   describe.each(testData)(
     "$startingPage page",
-    ({ startingPage, initialEntry, secondaryEntry, secondaryPage }) => {
+    ({ startingPage, initialEntry, secondaryPage, testId }) => {
       const router = createMemoryRouter(Routes, {
         initialEntries: [initialEntry],
       });
@@ -43,7 +55,7 @@ describe("App", () => {
         expect(screen.getByRole("navigation")).toBeInTheDocument();
       });
 
-      it(`renders when on ${secondaryEntry}`, () => {
+      it(`renders when on $initialEntry`, () => {
         render(<RouterProvider router={router} />);
         expect(
           screen.getByTestId(`${startingPage}-component`)
@@ -52,24 +64,18 @@ describe("App", () => {
 
       it(`nav link is active when on /${startingPage}`, () => {
         render(<RouterProvider router={router} />);
-        const link = screen.getByRole("link", {
-          name: `${startingPage} page link`,
-        });
-        const LinkItem = link.closest("li");
-        expect(LinkItem).toHaveClass("nav-selected");
+        const link = screen.getByTestId(testId);
+        const navSelectedValue = link?.getAttribute("data-navselected");
+        expect(navSelectedValue).toBe("true");
       });
 
-      it(`nav link is not active when on ${secondaryEntry}`, () => {
+      it(`nav link is not active when on secondary page`, () => {
         render(<RouterProvider router={router} />);
         const user = userEvent.setup();
-        user.click(
-          screen.getByRole("link", { name: `${secondaryPage} page link` })
-        );
-        const link = screen.getByRole("link", {
-          name: `${secondaryPage} page link`,
-        });
-        const linkItem = link.closest("li");
-        expect(linkItem).toHaveClass("nav-deselected");
+        user.click(screen.getByTestId(testId));
+        const link = screen.getByTestId(secondaryPage);
+        const navSelectedValue = link?.getAttribute("data-navselected");
+        expect(navSelectedValue).toBe("false");
       });
     }
   );
