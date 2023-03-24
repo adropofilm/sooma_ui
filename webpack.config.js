@@ -11,6 +11,7 @@ module.exports = {
     static: {
       directory: path.resolve(__dirname, "./dist"),
     },
+    open: true,
   },
   module: {
     rules: [
@@ -20,6 +21,18 @@ module.exports = {
         use: {
           loader: "babel-loader",
         },
+      },
+      {
+        test: /\.css$/i,
+        use: ["style-loader", "css-loader", "postcss-loader"],
+      },
+      {
+        test: /\.(png|jpe?g|gif)$/i,
+        use: [
+          {
+            loader: "file-loader",
+          },
+        ],
       },
     ],
   },

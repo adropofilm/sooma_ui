@@ -1,7 +1,7 @@
 {
   "compilerOptions": {
     "target": "ESNext",
-    "module": "umd",
+    "module": "ES2020",
     "lib": ["ESNext", "dom"],
     "jsx": "react",
     "noEmit": true,
@@ -16,5 +16,5 @@
     "forceConsistentCasingInFileNames": true,
     "esModuleInterop": true
   },
-  "include": ["src", "utils", "jest.setup.ts"]
+  "include": ["src", "utils", "jest.setup.ts", "custom.d.ts", "types"]
 }
