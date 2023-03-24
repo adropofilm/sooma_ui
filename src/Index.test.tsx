@@ -13,10 +13,6 @@ jest.mock("./components/Pages/Quizzes", () => ({
 }));
 
 describe("App", () => {
-  beforeEach(() => {
-    jest.resetModules();
-  });
-
   const testData = [
     {
       startingPage: "home",
@@ -43,34 +39,37 @@ describe("App", () => {
       testId: "sm-quizzes-nav-item",
     },
   ];
+
   describe.each(testData)(
     "$startingPage page",
     ({ startingPage, initialEntry, secondaryPage, testId }) => {
-      const router = createMemoryRouter(Routes, {
-        initialEntries: [initialEntry],
+      let router;
+
+      beforeEach(() => {
+        jest.resetModules();
+        router = createMemoryRouter(Routes, {
+          initialEntries: [initialEntry],
+        });
+        render(<RouterProvider router={router} />);
       });
 
       it("renders nav without crashing", () => {
-        render(<RouterProvider router={router} />);
         expect(screen.getByRole("navigation")).toBeInTheDocument();
       });
 
       it(`renders when on $initialEntry`, () => {
-        render(<RouterProvider router={router} />);
         expect(
           screen.getByTestId(`${startingPage}-component`)
         ).toBeInTheDocument();
       });
 
       it(`nav link is active when on /${startingPage}`, () => {
-        render(<RouterProvider router={router} />);
         const link = screen.getByTestId(testId);
         const navSelectedValue = link?.getAttribute("data-navselected");
         expect(navSelectedValue).toBe("true");
       });
 
-      it(`nav link is not active when on secondary page`, () => {
-        render(<RouterProvider router={router} />);
+      it(`initial page nav link is not active when on secondary page`, () => {
         const user = userEvent.setup();
         user.click(screen.getByTestId(testId));
         const link = screen.getByTestId(secondaryPage);
