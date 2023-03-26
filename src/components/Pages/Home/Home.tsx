@@ -1,9 +1,6 @@
 import React, { ReactElement } from "react";
+import Hero from "./Hero";
 
 export const Home = (): ReactElement => {
-  return (
-    <div>
-      <h1>Home Page</h1>
-    </div>
-  );
+  return <Hero />;
 };
